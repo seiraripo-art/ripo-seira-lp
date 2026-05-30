@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>李白 聖羅｜姫予約案内</title>
+  <meta name="description" content="李白 聖羅の姫予約案内ページ。派手じゃないけど、会うと落ち着く。おっとりインドアな癒しの時間を、ゆっくり過ごしたい方へ。">
+  <meta property="og:title" content="李白 聖羅｜姫予約案内">
+  <meta property="og:description" content="派手じゃないけど、会うと落ち着く。おっとりインドアな癒しの時間を、ゆっくり過ごしたい方へ。">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#e8d6d8">
+  <!-- 身バレ対策でGoogle検索に出したくない場合は、下の1行のコメントを外す -->
+  <!-- <meta name="robots" content="noindex, nofollow"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="ページ上部へ">
+      <span class="brand-mark">Ripo</span>
+      <span class="brand-name">聖羅</span>
+    </a>
+    <nav class="nav" aria-label="ページ内メニュー">
+      <a href="#about">聖羅について</a>
+      <a href="#fit">相性</a>
+      <a href="#option">限定オプション</a>
+      <a href="#reserve">ご予約</a>:root{
+  --bg:#f7f0ef;
+  --paper:#fffaf8;
+  --pink:#e8d6d8;
+  --rose:#c76a82;
+  --rose-dark:#a83f5f;
+  --ink:#3f3c46;
+  --muted:#746a72;
+  --line:rgba(168,63,95,.18);
+  --gold:#b88a4a;
+  --shadow:0 22px 70px rgba(91,54,65,.16);
+  --radius:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Zen Kaku Gothic New',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,.95) 0 0.5rem, transparent .6rem),
+    radial-gradient(circle at 85% 12%, rgba(199,106,130,.12) 0 5rem, transparent 5.1rem),
+    radial-gradient(circle at 8% 78%, rgba(184,138,74,.10) 0 6rem, transparent 6.1rem),
+    linear-gradient(135deg,#f8eeee 0%,#f7f0ef 42%,#efe1e2 100%);
+  line-height:1.9;
+}
+a{color:inherit;text-decoration:none}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:14px clamp(18px,4vw,54px);
+  background:rgba(255,250,248,.84);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:baseline;gap:10px;font-family:'Noto Serif JP',serif}
+.brand-mark{font-size:.86rem;color:var(--rose-dark);letter-spacing:.14em;text-transform:uppercase}
+.brand-name{font-size:1.35rem;font-weight:700;letter-spacing:.12em}
+.nav{display:flex;gap:18px;font-size:.9rem;color:var(--muted)}
+.nav a:hover{color:var(--rose-dark)}
+.section,.section-wide{width:min(1120px,calc(100% - 32px));margin-inline:auto}
+.section{padding:86px 0}
+.section-wide{padding:74px 0 60px}
+.hero{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
+  gap:36px;
+  align-items:center;
+  min-height:calc(100svh - 76px);
+}
+.eyebrow{
+  margin:0 0 10px;
+  color:var(--rose-dark);
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:.82rem;
+  font-weight:700;
+}
+h1,h2,h3,p{margin-top:0}
+h1,h2{font-family:'Noto Serif JP',serif;line-height:1.45;letter-spacing:.04em}
+h1{font-size:clamp(2.45rem,7.8vw,5.65rem);margin:0 0 22px;color:var(--ink)}
+h2{font-size:clamp(1.7rem,4.2vw,3rem);margin:0 0 18px}
+h3{font-size:1.15rem;margin:0 0 10px;color:var(--rose-dark)}
+.lead{font-size:clamp(1rem,2.3vw,1.18rem);color:var(--muted);max-width:720px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:12px 22px;
+  border-radius:999px;
+  font-weight:700;
+  border:1px solid transparent;
+  transition:.2s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 26px rgba(91,54,65,.14)}
+.btn-primary{background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:#fff}
+.btn-secondary{background:#fff;color:var(--rose-dark);border-color:var(--line)}
+.btn-ghost{background:rgba(255,255,255,.52);border-color:var(--line);color:var(--muted)}
+.hero-card{
+  border:1px solid rgba(255,255,255,.74);
+  border-radius:34px;
+  padding:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.84),rgba(255,250,248,.76));
+  box-shadow:var(--shadow);
+}
+.photo-placeholder{
+  aspect-ratio:4/5;
+  border-radius:26px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  overflow:hidden;
+  color:#9c7380;
+  font-family:'Noto Serif JP',serif;
+  background:
+    linear-gradient(135deg,rgba(199,106,130,.18),rgba(255,255,255,.55)),
+    repeating-linear-gradient(45deg,rgba(168,63,95,.08) 0 1px,transparent 1px 12px);
+  border:1px dashed rgba(168,63,95,.28);
+}
+.profile-mini{padding:18px 4px 2px;color:var(--muted)}
+.mini-name{font-family:'Noto Serif JP',serif;font-size:1.35rem;color:var(--ink);margin-bottom:0}
+.mini-name span{font-size:.85rem;color:var(--muted);font-family:'Zen Kaku Gothic New',sans-serif}
+.mini-note{font-size:.92rem;border-top:1px solid var(--line);padding-top:12px;margin-top:12px}
+.section-title{max-width:700px;margin-bottom:28px}
+.section-title.center{text-align:center;margin-inline:auto}
+.section-title p:not(.eyebrow){color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:22px;align-items:stretch}
+.text-card,.card,.option-card,.reserve-box,details{
+  background:rgba(255,250,248,.88);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 16px 44px rgba(91,54,65,.08);
+  border-radius:var(--radius);
+}
+.text-card{padding:30px;color:var(--muted)}
+.text-card.large{font-size:1.03rem}
+.text-card p:last-child{margin-bottom:0}
+.keyword-card{
+  padding:24px;
+  border-radius:var(--radius);
+  background:linear-gradient(135deg,rgba(232,214,216,.88),rgba(255,250,248,.72));
+  border:1px solid var(--line);
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-content:center;
+}
+.keyword-card span{
+  display:inline-flex;
+  padding:7px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+  color:var(--rose-dark);
+  font-weight:700;
+  font-size:.92rem;
+}
+.soft{
+  width:100%;
+  max-width:none;
+  background:rgba(255,250,248,.35);
+  border-block:1px solid rgba(168,63,95,.08);
+  padding-inline:16px;
+}
+.soft>.section-title,.soft>.cards,.soft>.faq-list{width:min(1120px,100%);margin-inline:auto}
+.cards{display:grid;gap:18px}
+.cards.three{grid-template-columns:repeat(3,1fr)}
+.cards.two{grid-template-columns:repeat(2,1fr)}
+.card,.option-card{padding:26px}
+.card p,.option-card p{color:var(--muted);margin-bottom:0}
+.voice-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+blockquote{
+  margin:0;
+  padding:28px;
+  border-radius:var(--radius);
+  background:#fffaf8;
+  color:var(--rose-dark);
+  font-family:'Noto Serif JP',serif;
+  font-size:1.08rem;
+  box-shadow:0 14px 40px rgba(91,54,65,.08);
+  border:1px solid var(--line);
+}
+.split{display:grid;grid-template-columns:.75fr 1.25fr;gap:30px;align-items:start}
+.note{font-size:.9rem;color:#8a7b83}
+.option-card{position:relative;overflow:hidden}
+.option-card:before{
+  content:"";
+  position:absolute;
+  inset:auto -40px -70px auto;
+  width:150px;height:150px;
+  border-radius:50%;
+  background:rgba(199,106,130,.10);
+}
+.option-card.accent{background:linear-gradient(135deg,#fffaf8,#f1dde1)}
+.option-label{display:inline-block;margin-bottom:8px;color:var(--gold);font-family:'Noto Serif JP',serif;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.flow-list{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.flow-list li{
+  display:grid;
+  grid-template-columns:52px 1fr;
+  gap:16px;
+  align-items:start;
+  padding:22px;
+  border-radius:24px;
+  background:rgba(255,250,248,.84);
+  border:1px solid var(--line);
+}
+.flow-list span{
+  width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--rose);color:#fff;font-family:'Noto Serif JP',serif;font-weight:700
+}
+.flow-list p{color:var(--muted);margin-bottom:0}
+.faq-list{display:grid;gap:12px}
+details{padding:0;overflow:hidden}
+summary{cursor:pointer;padding:18px 22px;font-weight:700;color:var(--rose-dark)}
+details p{padding:0 22px 20px;color:var(--muted);margin:0}
+.reserve{padding-top:54px}
+.reserve-box{text-align:center;padding:44px 24px;background:linear-gradient(135deg,rgba(255,250,248,.94),rgba(232,214,216,.68))}
+.reserve-box h2{margin-inline:auto;max-width:740px}
+.reserve-box p:not(.eyebrow){max-width:740px;margin-inline:auto;color:var(--muted)}
+.center-actions{justify-content:center}
+.footer{
+  padding:34px 16px 44px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid var(--line);
+  background:rgba(255,250,248,.6);
+}
+.footer p{font-family:'Noto Serif JP',serif;color:var(--ink);margin-bottom:10px}
+.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 18px;font-size:.9rem}
+.footer-links a{color:var(--rose-dark)}
+@media (max-width:880px){
+  .nav{display:none}
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:46px}
+  .hero-card{max-width:520px;margin-inline:auto;width:100%}
+  .about-grid,.split,.cards.three,.cards.two,.voice-list{grid-template-columns:1fr}
+  .section{padding:68px 0}
+}
+@media (max-width:540px){
+  .site-header{padding:12px 16px}
+  .brand-name{font-size:1.15rem}
+  .section,.section-wide{width:min(100% - 24px,1120px)}
+  h1{font-size:2.65rem}
+  .btn{width:100%}
+  .hero-actions{gap:10px}
+  .text-card,.card,.option-card{padding:22px}
+  .flow-list li{grid-template-columns:44px 1fr;padding:18px}
+}
+
+.hero-photo{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:center 38%;
+  border-radius:26px;
+  display:block;
+  box-shadow:0 18px 42px rgba(91,54,65,.18);
+}
+@media (max-width:760px){
+  .hero-photo{aspect-ratio:3/4; object-position:center 35%;}
+}
+
+    </nav>
+  </header>
+
+  <main id="top"># 李白 聖羅 LP / GitHub Pages用
+
+## 入っているもの
+
+- `index.html`：LP本体
+- `styles.css`：デザイン
+- `images/main.jpg`：LPトップ用メイン画像
+- `images/sub-1.jpg` / `images/sub-2.jpg`：予備画像
+
+## 使い方
+
+1. GitHubのリポジトリに `index.html` と `styles.css` をアップロード
+2. Settings → Pages → Branch を `main` / root に設定
+3. 表示URLを店ブログ・シティヘブン・SelectTypeなどに貼る
+
+## 差し替える場所
+
+### 写真
+`index.html` のこの部分を画像に差し替えます。
+
+```html
+<div class="photo-placeholder">
+  <span>写真を入れる場合は<br>ここを差し替え</span>
+</div>
+```
+
+例：
+
+```html
+<img class="hero-photo" src="images/main.jpg" alt="聖羅">
+```
+
+その場合は `styles.css` に下を追加します。
+
+```css
+.hero-photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:26px;display:block;}
+```
+
+### 検索に出したくない場合
+`index.html` の以下の行のコメントを外してください。
+
+```html
+<!-- <meta name="robots" content="noindex, nofollow"> -->
+```
+
+### 予約リンク
+現在は以下を設定済みです。
+
+- Web予約：`https://select-type.com/rsv/?id=LZCFRMtfkbM`
+- LINE：`https://lin.ee/zeVn5rB`
+- 李白公式HP：`https://www.ripo-chiba.com/cast/8306/`
+- シティヘブン：`https://www.cityheaven.net/chiba/A1201/A120101/ripo_tr/girlid-30041998/?mypage_flg=1`
+
+## 方針
+
+SelectTypeは予約フォームとして使い、GitHub Pages側は「聖羅に会いたくなるためのLP」として使う構成です。
+
+
+## 今回の更新
+
+LPトップに、既出感が少ない花柄チャイナの別カットを設定済みです。
+
+    <section class="hero section-wide">
+      <div class="hero-copy">
+        <p class="eyebrow">李白 / Seira</p>
+        <h1>派手じゃないけど、<br>会うと落ち着く。</h1>
+        <p class="lead">
+          おっとりマイペースで、ゆっくり流れる時間が好きです。<br>
+          無理に盛り上げるより、自然に力が抜けるような時間を一緒に過ごせたら嬉しいです。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://select-type.com/rsv/?id=LZCFRMtfkbM" target="_blank" rel="noopener">姫予約する</a>
+          <a class="btn btn-secondary" href="https://lin.ee/zeVn5rB" target="_blank" rel="noopener">LINEで相談</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="聖羅の雰囲気">
+        <img class="hero-photo" src="images/main.jpg" alt="聖羅のメインビジュアル">
+        <div class="profile-mini">
+          <p class="mini-name">聖羅 <span>せいら</span></p>
+          <p>T160 / B82(C) W56 H84</p>
+          <p class="mini-note">静かに甘やかされたい日に、思い出してもらえたら嬉しいです。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-title">
+        <p class="eyebrow">About</p>
+        <h2>聖羅ってこんな人</h2>
+      </div>
+      <div class="about-grid">
+        <div class="text-card large">
+          <p>
+            よく「話してるとほっとする」「時間がゆっくり流れる感じがする」と言っていただくことがあります。
+            にぎやかに盛り上げるより、少しずつ自然に打ち解けていく空気が好きです。
+          </p>
+          <p>
+            実はかなりインドア派。アニメやゲーム、ドラマを観たり、おうちでゆっくり過ごす時間も好きです。
+            ふわっと見られがちだけど、中身は少しだけマイペースで、ちょっと変わっているかもしれません。
+          </p>
+        </div>
+        <div class="keyword-card">
+          <span>おっとり</span>
+          <span>マイペース</span>
+          <span>インドア派</span>
+          <span>自然に打ち解ける</span>
+          <span>落ち着く時間</span>
+          <span>癒しとドキドキ</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="fit">
+      <div class="section-title center">
+        <p class="eyebrow">For you</p>
+        <h2>こんな方と相性がいいです</h2>
+        <p>サービスの内容だけではなく、過ごす空気感で選びたい方へ。</p>
+      </div>
+      <div class="cards three">
+        <article class="card">
+          <h3>落ち着いて過ごしたい</h3>
+          <p>派手なノリより、ゆっくり距離が近づいていく時間が好きな方。</p>
+        </article>
+        <article class="card">
+          <h3>緊張しやすい</h3>
+          <p>初めてで不安がある方や、無理に話さなくても自然に過ごしたい方。</p>
+        </article>
+        <article class="card">
+          <h3>癒しもドキドキも欲しい</h3>
+          <p>ただ癒されるだけじゃなく、少し特別な密着感も楽しみたい方。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section voice">
+      <div class="section-title">
+        <p class="eyebrow">Voice</p>
+        <h2>嬉しかったお言葉</h2>
+      </div>
+      <div class="voice-list">
+        <blockquote>「話してると、なんだかほっとする」</blockquote>
+        <blockquote>「気づいたら時間があっという間だった」</blockquote>
+        <blockquote>「すごくリラックスできた」</blockquote>
+      </div>
+    </section>
+
+    <section class="section" id="mat">
+      <div class="split">
+        <div>
+          <p class="eyebrow">Speciality</p>
+          <h2>実は、マ〇トの時間が好きです</h2>
+        </div>
+        <div class="text-card">
+          <p>
+            マ〇トは、ただぬるぬるするだけではなく、質感や距離感で気持ちよさが変わる奥深い時間だと思っています。
+          </p>
+          <p>
+            私のマ〇トでは、特製〇ーションを使って、とろとろ流れる感じにも、もっちり吸い付く感じにも調整できます。
+            お好みがあれば、ご予約時や当日にこっそり教えてくださいね。
+          </p>
+          <p class="note">※水溶性なので、お湯でスルッと落ちやすいのも安心ポイントです。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="option">
+      <div class="section-title center">
+        <p class="eyebrow">Hime-yoyaku only</p>
+        <h2>姫予約で、少し特別に過ごしたい方へ</h2>
+        <p>事前にご予約いただくことで、その日のためにゆっくり準備してお迎えできます。</p>
+      </div>
+      <div class="cards two">
+        <article class="option-card">
+          <span class="option-label">Option 01</span>
+          <h3>プレミアム泡洗体</h3>
+          <p>ふわふわ、もっちり、ねっとり。極上泡で、いつもより丁寧に全身を洗い上げます。</p>
+        </article>
+        <article class="option-card">
+          <span class="option-label">Option 02</span>
+          <h3>ぬるぬる♥マッサージ</h3>
+          <p>プレイ前に、とろけるような感触でゆっくり焦らすマッサージ。受け身でいたい方に。</p>
+        </article>
+        <article class="option-card">
+          <span class="option-label">Option 03</span>
+          <h3>ぽかぽか♪マッサージ</h3>
+          <p>プレイ後に、温かいオイルでふわっと余韻を残す癒しのマッサージ。</p>
+        </article>
+        <article class="option-card accent">
+          <span class="option-label">Option 04</span>
+          <h3>とろける♡密着マット</h3>
+          <p>美容成分配合の聖羅オリジナルの〇ーションで、しっとりなめらかに包み込む贅沢マ〇ト。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="flow">
+      <div class="section-title center">
+        <p class="eyebrow">Flow</p>
+        <h2>姫予約の流れ</h2>
+      </div>
+      <ol class="flow-list">
+        <li><span>1</span><div><h3>空き枠を確認</h3><p>SelectTypeの予約ページから、ご希望の日程を確認できます。</p></div></li>
+        <li><span>2</span><div><h3>フォームから予約</h3><p>ご希望の日時・コース・オプションがあれば入力してください。</p></div></li>
+        <li><span>3</span><div><h3>確認後、予約確定</h3><p>内容確認後、確定のご案内をお送りします。</p></div></li>
+        <li><span>4</span><div><h3>当日ご来店</h3><p>ばたばたせず、ゆっくり過ごせるように準備してお待ちしています。</p></div></li>
+      </ol>
+    </section>
+
+    <section class="section soft" id="faq">
+      <div class="section-title center">
+        <p class="eyebrow">FAQ</p>
+        <h2>よくあるご質問</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>姫予約はリピーター限定ですか？</summary>
+          <p>初めての方でもご利用いただけます。予約の流れもわかりやすくご案内します。</p>
+        </details>
+        <details>
+          <summary>出勤日以外の予約は可能ですか？</summary>
+          <p>予定次第ではご案内可能です。まずはLINEまたは予約フォームからご相談ください。</p>
+        </details>
+        <details>
+          <summary>会話が得意じゃなくても大丈夫ですか？</summary>
+          <p>大丈夫です。無理に盛り上げなくても、静かに一緒に過ごす時間も好きです。</p>
+        </details>
+        <details>
+          <summary>オプションは当日相談できますか？</summary>
+          <p>可能です。事前に決めきれない場合は、当日雰囲気に合わせて相談してください。</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section reserve" id="reserve">
+      <div class="reserve-box">
+        <p class="eyebrow">Reservation</p>
+        <h2>静かに甘やかされたい日に、<br>思い出してもらえたら嬉しいです。</h2>
+        <p>姫予約は前日までに、Web予約・LINEから承っています。当日のご予約は店舗へお電話ください。</p>
+        <div class="hero-actions center-actions">
+          <a class="btn btn-primary" href="https://select-type.com/rsv/?id=LZCFRMtfkbM" target="_blank" rel="noopener">姫予約する</a>
+          <a class="btn btn-secondary" href="https://lin.ee/zeVn5rB" target="_blank" rel="noopener">LINEで相談</a>
+          <a class="btn btn-ghost" href="https://www.ripo-chiba.com/cast/8306/" target="_blank" rel="noopener">李白公式HP</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>李白 聖羅 / Ripo Seira</p>
+    <div class="footer-links">
+      <a href="https://select-type.com/rsv/?id=LZCFRMtfkbM" target="_blank" rel="noopener">Web予約</a>
+      <a href="https://lin.ee/zeVn5rB" target="_blank" rel="noopener">LINE</a>
+      <a href="https://www.cityheaven.net/chiba/A1201/A120101/ripo_tr/girlid-30041998/?mypage_flg=1" target="_blank" rel="noopener">シティヘブン</a>
+      <a href="https://www.ripo-chiba.com/cast/8306/" target="_blank" rel="noopener">李白公式HP</a>
+    </div>
+  </footer>
+</body>
+</html>
