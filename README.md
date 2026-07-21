@@ -46,7 +46,7 @@
 ### 予約リンク
 現在は以下を設定済みです。
 
-- Web予約：`https://select-type.com/rsv/?id=LZCFRMtfkbM`
+- Web予約：`https://seiraripo-reserve.com/`
 - LINE：`https://lin.ee/zeVn5rB`
 - 李白公式HP：`https://www.ripo-chiba.com/cast/8306/`
 - シティヘブン：`https://www.cityheaven.net/chiba/A1201/A120101/ripo_tr/girlid-30041998/?mypage_flg=1`
